@@ -13,19 +13,23 @@ public class Enemy : MonoBehaviour
     private Rigidbody2D rb;
     private Vector2 movement;
 
+    
+
     // Start is called before the first frame update
     void Start()
     {
         // Vector3 direction = tesseract.position - transform.position;
         // Debug.Log(tesseract.position);
         rb = this.GetComponent<Rigidbody2D>();
+        tesseract = GameObject.FindWithTag("Tesseract").transform;
+        scoreManager = GameObject.FindObjectOfType<ScoreManager>();
     }
 
     // Update is called once per frame
     void Update()
     {
         var direction = tesseract.position - transform.position;
-        var angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
+        var angle = Mathf.Atan2(direction.y, (direction.x)) * Mathf.Rad2Deg;
         transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
 
         direction.Normalize();

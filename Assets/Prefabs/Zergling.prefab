@@ -125,8 +125,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d0bb1b6f0d029e240903eec50e13a0c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 1
-  speed: 0.75
+  health: 3
+  speed: 1.25
   gameObject: {fileID: 7456021483331725353}
   scoreManager: {fileID: 0}
   tesseract: {fileID: 0}
