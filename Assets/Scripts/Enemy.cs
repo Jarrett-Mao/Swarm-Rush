@@ -19,10 +19,6 @@ public class Enemy : MonoBehaviour
     private Rigidbody2D rb;
     private Vector2 movement;
 
-    public EnemyHealth enemyHealth;
-
-
-
     // Start is called before the first frame update
     void Start()
     {
@@ -69,10 +65,7 @@ public class Enemy : MonoBehaviour
             scoreManager.score += 10;
             scoreManager.updateScore();
         }
-        Debug.Log("Max: " + maxHealth);
-        Debug.Log("Curr: " + health);
 
-        Debug.Log(calculateHealth());
     }
 
     void destroySelf(){
