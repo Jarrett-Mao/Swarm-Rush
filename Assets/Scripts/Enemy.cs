@@ -1,10 +1,16 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Enemy : MonoBehaviour
 {
-    public int health;
+    //health bar variables
+    public float maxHealth;
+    private float health;
+    public Slider slider;
+    public GameObject healthBarUI;
+
     public float speed;
     public GameObject gameObject;
     public ScoreManager scoreManager;
@@ -13,16 +19,23 @@ public class Enemy : MonoBehaviour
     private Rigidbody2D rb;
     private Vector2 movement;
 
-    
+    public EnemyHealth enemyHealth;
+
+
 
     // Start is called before the first frame update
     void Start()
     {
+        
         // Vector3 direction = tesseract.position - transform.position;
         // Debug.Log(tesseract.position);
         rb = this.GetComponent<Rigidbody2D>();
         tesseract = GameObject.FindWithTag("Tesseract").transform;
         scoreManager = GameObject.FindObjectOfType<ScoreManager>();
+
+        health = maxHealth;
+        slider.value = calculateHealth();
+        healthBarUI.SetActive(false);
     }
 
     // Update is called once per frame
@@ -34,6 +47,11 @@ public class Enemy : MonoBehaviour
 
         direction.Normalize();
         movement = direction;
+
+        slider.value = calculateHealth(); //health bar status
+        if(health < maxHealth){
+            healthBarUI.SetActive(true); 
+        } 
     }
     private void FixedUpdate() {
         moveCharacter(movement);
@@ -46,11 +64,24 @@ public class Enemy : MonoBehaviour
     void OnMouseDown(){
         
         health -= 1;
-        if (health == 0){
-            GameObject.Destroy(gameObject);
+        if (health <= 0){
+            destroySelf();
             scoreManager.score += 10;
             scoreManager.updateScore();
         }
-        
+        Debug.Log("Max: " + maxHealth);
+        Debug.Log("Curr: " + health);
+
+        Debug.Log(calculateHealth());
     }
+
+    void destroySelf(){
+        GameObject.Destroy(gameObject);
+    }
+
+    float calculateHealth(){
+        return health / maxHealth;
+    }
+
+
 }
