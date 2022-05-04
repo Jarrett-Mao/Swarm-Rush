@@ -509,7 +509,7 @@ GameObject:
   - component: {fileID: 7456021483331725352}
   m_Layer: 0
   m_Name: Zergling
-  m_TagString: Enemy
+  m_TagString: Zergling
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

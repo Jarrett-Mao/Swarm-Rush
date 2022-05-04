@@ -44,6 +44,10 @@ public class Wall : MonoBehaviour
     }
 
     private void OnTriggerEnter2D(Collider2D enemy){
-        Debug.Log("under attack");
+        if (enemy.gameObject.tag == "Zergling"){
+            health -= 1;
+            Debug.Log(health);
+        }
+        
     }
 }

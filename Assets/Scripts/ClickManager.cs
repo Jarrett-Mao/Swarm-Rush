@@ -10,8 +10,8 @@ public class ClickManager : MonoBehaviour
 
     private int apm; 
 
-    private float firstClick = 0;
-    private float lastClick = 0;
+    // private float firstClick = 0;
+    // private float lastClick = 0;
     private int counter = 0;
     
     // Start is called before the first frame update

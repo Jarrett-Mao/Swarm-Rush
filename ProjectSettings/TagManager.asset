@@ -6,7 +6,7 @@ TagManager:
   tags:
   - Tesseract
   - ScoreManager
-  - Enemy
+  - Zergling
   layers:
   - Default
   - TransparentFX
