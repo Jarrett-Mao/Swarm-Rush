@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Tesseract
   - ScoreManager
+  - Enemy
   layers:
   - Default
   - TransparentFX
