@@ -10,14 +10,15 @@ public class Wall : MonoBehaviour
     public Slider slider;
     public GameObject healthBarUI;
 
-    
+    public int zerglingTouching = 0;
+
+    // private bool takeDamage = false;
 
     // Start is called before the first frame update
     void Start()
     {
         health = maxHealth;
         slider.value = calculateHealth();
-
     }
 
     // Update is called once per frame
@@ -31,7 +32,7 @@ public class Wall : MonoBehaviour
             destroySelf();
         }
 
-        // checkCollision();
+        StartCoroutine(loseHealth());
         
     }
 
@@ -44,10 +45,27 @@ public class Wall : MonoBehaviour
     }
 
     private void OnTriggerEnter2D(Collider2D enemy){
+        // takeDamage = true;
         if (enemy.gameObject.tag == "Zergling"){
-            health -= 1;
-            Debug.Log(health);
+            Debug.Log("enter");
+            zerglingTouching += 1;  
         }
+    }
+
+    private void OnTriggerExit2D(Collider2D enemy){
+        // takeDamage = false;
+        if (enemy.gameObject.tag == "Zergling"){
+            Debug.Log("exit");
+            zerglingTouching -= 1;  
+        }
+    }
+
+    IEnumerator loseHealth(){
+        float damageValue = 0.25f * zerglingTouching;
+
+        health -= damageValue;
         
+        yield return new WaitForSeconds(3.0f);
+        // yield return null;
     }
 }
