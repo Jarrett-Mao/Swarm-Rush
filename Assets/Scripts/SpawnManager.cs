@@ -13,15 +13,13 @@ public class SpawnManager : MonoBehaviour
     private float randomXposition, randomYposition;
     private Vector3 spawnPosition;
 
-    // public Transform tesseract;
+    ArrayList enemyList = new ArrayList();
 
     // Start is called before the first frame update
     void Start()
     {
         InvokeRepeating("SpawnEnemy", 0f, 2.0f);
 
-        // //for testing
-        // SpawnEnemy();
     }
 
     // Update is called once per frame
@@ -33,7 +31,8 @@ public class SpawnManager : MonoBehaviour
     private void SpawnEnemy(){
         randomSpawnZone = Random.Range(0, 4);
 
-        switch (randomSpawnZone){
+        //spawning in random ranges
+        switch (randomSpawnZone){ 
             case 0:
             randomXposition = Random.Range(-11.0f, -10f);
             randomYposition = Random.Range(-8.0f, -8.0f);
@@ -58,7 +57,13 @@ public class SpawnManager : MonoBehaviour
 
         spawnPosition = new Vector3(randomXposition, randomYposition, 0f);
         newEnemy = Instantiate(enemy, spawnPosition, Quaternion.identity);
-        // rend = newEnemy.GetComponenet<SpriteRenderer>();
         
+        //add enemy to the list
+        enemyList.Add(enemy);
+    }
+
+    public void stopSpawning(){
+        CancelInvoke();
+
     }
 }

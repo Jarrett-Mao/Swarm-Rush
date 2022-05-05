@@ -68,7 +68,7 @@ public class Enemy : MonoBehaviour
 
     }
 
-    void destroySelf(){
+    public void destroySelf(){
         GameObject.Destroy(gameObject);
     }
 

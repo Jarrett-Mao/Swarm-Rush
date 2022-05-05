@@ -35,27 +35,30 @@ public class Wall : MonoBehaviour
         StartCoroutine(loseHealth());
         
     }
-
-        void destroySelf(){
+    
+    void destroySelf(){
         GameObject.Destroy(gameObject);
     }
 
+    //returns a percentage of health
     float calculateHealth(){
         return health / maxHealth;
     }
 
-    private void OnTriggerEnter2D(Collider2D enemy){
+    //when enemies touch the wall they are counted
+    private void OnTriggerEnter2D(Collider2D enemy){ 
         // takeDamage = true;
         if (enemy.gameObject.tag == "Zergling"){
-            Debug.Log("enter");
+            // Debug.Log("enter");
             zerglingTouching += 1;  
         }
     }
 
+    //when enemies are destroyed they are counted
     private void OnTriggerExit2D(Collider2D enemy){
         // takeDamage = false;
         if (enemy.gameObject.tag == "Zergling"){
-            Debug.Log("exit");
+            // Debug.Log("exit");
             zerglingTouching -= 1;  
         }
     }
