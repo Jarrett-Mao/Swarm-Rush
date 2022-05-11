@@ -644,7 +644,7 @@ MonoBehaviour:
   maxHealth: 3
   slider: {fileID: 2914344181779827461}
   healthBarUI: {fileID: 2914344182652938871}
-  speed: 1.25
+  speed: 1.5
   gameObject: {fileID: 7456021483331725353}
   scoreManager: {fileID: 0}
   tesseract: {fileID: 0}
