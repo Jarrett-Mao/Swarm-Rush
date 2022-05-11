@@ -5,6 +5,9 @@ using UnityEngine;
 public class Tesseract : MonoBehaviour
 {
     public SpawnManager spawnManager;
+    public ScoreManager scoreManager;
+    
+    public GameObject UIComponents;
 
     // ArrayList enemyList = new ArrayList();
 
@@ -25,10 +28,23 @@ public class Tesseract : MonoBehaviour
         // Debug.Log("testing");
 
         if (collider.gameObject.tag == "Zergling"){
+            //updates high score
+            scoreManager.updateHighScore(); 
+
+            //stops spawning and deletes all existing enemies
             spawnManager.stopSpawning();
             foreach (Enemy enemy in GameObject.FindObjectsOfType<Enemy>()){
                 GameObject.Destroy(enemy.gameObject);
             }
+            GameObject.Destroy(gameObject);
+
+            //sets buttons to active 
+            UIComponents.gameObject.SetActive(true);
+
+            //effectively pauses the game
+            Time.timeScale = 0;
+
+
         }
         
     }

@@ -62,7 +62,6 @@ public class Enemy : MonoBehaviour
         health -= 1;
         if (health <= 0){
             destroySelf();
-            scoreManager.score += 10;
             scoreManager.updateScore();
         }
 

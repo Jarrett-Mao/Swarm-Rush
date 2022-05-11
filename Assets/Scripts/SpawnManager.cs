@@ -73,7 +73,7 @@ public class SpawnManager : MonoBehaviour
 
             if (spawnCounter % 5 == 1){
                 spawnSpeed -= 0.1f;
-                Debug.Log(spawnSpeed);
+                // Debug.Log(spawnSpeed);
             }
             
             yield return new WaitForSeconds(spawnSpeed);
