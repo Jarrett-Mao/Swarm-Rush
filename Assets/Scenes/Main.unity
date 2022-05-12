@@ -434,7 +434,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 28594757}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -5.07, y: -2.89, z: 0}
+  m_LocalPosition: {x: -7.32, y: 3.82, z: 0}
   m_LocalScale: {x: 0.75, y: 0.75, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1548,6 +1548,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   zergling: {fileID: 7456021483331725353, guid: eeac9596b56bbf840be813d627777471, type: 3}
   hydralisk: {fileID: 1433869322676645455, guid: 0501dbb1e28e4a34daaa12d2f0b2f7bc, type: 3}
+  infestor: {fileID: 5528956798743216252, guid: 6fa72be0930de0f4b9c505e3bc46fd16, type: 3}
 --- !u!4 &495809116
 Transform:
   m_ObjectHideFlags: 0
@@ -1771,8 +1772,6 @@ MonoBehaviour:
   health: 0
   slider: {fileID: 1722460326}
   healthBarUI: {fileID: 1299389171}
-  zerglingTouching: 0
-  hydraTouching: 0
 --- !u!1 &543256147
 GameObject:
   m_ObjectHideFlags: 0
@@ -2481,8 +2480,6 @@ MonoBehaviour:
   health: 0
   slider: {fileID: 387646848}
   healthBarUI: {fileID: 420186672}
-  zerglingTouching: 0
-  hydraTouching: 0
 --- !u!61 &1012805074
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -4549,8 +4546,6 @@ MonoBehaviour:
   health: 0
   slider: {fileID: 335178874}
   healthBarUI: {fileID: 1035747776}
-  zerglingTouching: 0
-  hydraTouching: 0
 --- !u!61 &2079036183
 BoxCollider2D:
   m_ObjectHideFlags: 0

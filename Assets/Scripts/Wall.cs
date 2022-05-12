@@ -10,8 +10,9 @@ public class Wall : MonoBehaviour
     public Slider slider;
     public GameObject healthBarUI;
 
-    public int zerglingTouching = 0;
-    public int hydraTouching = 0;
+    private int zerglingTouching = 0;
+    private int hydraTouching = 0;
+    private int infestorTouching = 0;
 
     // private bool takeDamage = false;
 
@@ -61,6 +62,9 @@ public class Wall : MonoBehaviour
             case "Hydralisk":
                 hydraTouching += 1;
                 break;
+            case "Infestor":
+                infestorTouching += 1;
+                break;
         }
     }
 
@@ -79,11 +83,14 @@ public class Wall : MonoBehaviour
             case "Hydralisk":
                 hydraTouching -= 1;
                 break;
+            case "Infestor":
+                infestorTouching -= 1;
+                break;
         }
     }
 
     IEnumerator loseHealth(){
-        float damageValue = (0.25f * zerglingTouching) + (0.5f * hydraTouching);
+        float damageValue = (0.25f * zerglingTouching) + (0.5f * hydraTouching) + (0.75f * infestorTouching);
 
         health -= damageValue;
         

@@ -642,6 +642,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHealth: 3
+  pointValue: 10
   slider: {fileID: 2914344181779827461}
   healthBarUI: {fileID: 2914344182652938871}
   speed: 1.5
