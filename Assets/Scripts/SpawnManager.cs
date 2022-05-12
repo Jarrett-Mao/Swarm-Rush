@@ -84,4 +84,9 @@ public class SpawnManager : MonoBehaviour
         StopAllCoroutines();
 
     }
+
+    public void newGame(){
+        spawnSpeed = 2.0f;
+        spawnCounter = 0;
+    }
 }

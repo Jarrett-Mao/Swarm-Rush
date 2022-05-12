@@ -31,9 +31,13 @@ public class ClickManager : MonoBehaviour
     }
 
     private void updateAPM(){
-        float minConversion = Time.time/60; //time.time to min
+        float minConversion = Time.timeSinceLevelLoad/60; //time.time to min
         float timeInMin = counter/minConversion;
         apm = (int)timeInMin;
+    }
+
+    public void newGame(){
+        counter = 0;
     }
 
 
