@@ -8,6 +8,7 @@ public class Enemy : MonoBehaviour
     //health bar variables
     public float maxHealth;
     private float health;
+    public int pointValue;
     public Slider slider;
     public GameObject healthBarUI;
 
@@ -62,7 +63,7 @@ public class Enemy : MonoBehaviour
         health -= 1;
         if (health <= 0){
             destroySelf();
-            scoreManager.updateScore();
+            scoreManager.updateScore(pointValue);
         }
 
     }

@@ -31,8 +31,8 @@ public class ScoreManager : MonoBehaviour
         PlayerScore.currScore = 0;
     }
 
-    public void updateScore(){
-        PlayerScore.currScore += 10;
+    public void updateScore(int pointVal){
+        PlayerScore.currScore += pointVal;
         scoreText.text = "Score: " + PlayerScore.currScore.ToString();
     }
 

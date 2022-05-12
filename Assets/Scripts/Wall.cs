@@ -11,6 +11,7 @@ public class Wall : MonoBehaviour
     public GameObject healthBarUI;
 
     public int zerglingTouching = 0;
+    public int hydraTouching = 0;
 
     // private bool takeDamage = false;
 
@@ -48,23 +49,41 @@ public class Wall : MonoBehaviour
     //when enemies touch the wall they are counted
     private void OnTriggerEnter2D(Collider2D enemy){ 
         // takeDamage = true;
-        if (enemy.gameObject.tag == "Zergling"){
-            // Debug.Log("enter");
-            zerglingTouching += 1;  
+        // if (enemy.gameObject.tag == "Zergling"){
+        //     // Debug.Log("enter");
+        //     zerglingTouching += 1;  
+        // }
+        switch (enemy.gameObject.tag){
+            case "Zergling":
+                zerglingTouching += 1;
+                break;
+
+            case "Hydralisk":
+                hydraTouching += 1;
+                break;
         }
     }
 
     //when enemies are destroyed they are counted
     private void OnTriggerExit2D(Collider2D enemy){
         // takeDamage = false;
-        if (enemy.gameObject.tag == "Zergling"){
-            // Debug.Log("exit");
-            zerglingTouching -= 1;  
+        // if (enemy.gameObject.tag == "Zergling"){
+        //     // Debug.Log("exit");
+        //     zerglingTouching -= 1;  
+        // }
+        switch (enemy.gameObject.tag){
+            case "Zergling":
+                zerglingTouching -= 1;
+                break;
+                
+            case "Hydralisk":
+                hydraTouching -= 1;
+                break;
         }
     }
 
     IEnumerator loseHealth(){
-        float damageValue = 0.25f * zerglingTouching;
+        float damageValue = (0.25f * zerglingTouching) + (0.5f * hydraTouching);
 
         health -= damageValue;
         

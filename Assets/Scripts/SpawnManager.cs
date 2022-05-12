@@ -5,7 +5,9 @@ using UnityEngine;
 public class SpawnManager : MonoBehaviour
 {
     [SerializeField]
-    private GameObject enemy;
+    private GameObject zergling;
+    [SerializeField]
+    private GameObject hydralisk;
 
     private GameObject newEnemy;
     private SpriteRenderer rend;
@@ -13,16 +15,17 @@ public class SpawnManager : MonoBehaviour
     private float randomXposition, randomYposition;
     private Vector3 spawnPosition;
 
-    private float spawnSpeed = 2.0f;
-    private int spawnCounter = 0;
+    private float zergSpawnSpeed = 2.0f;
+    private int zergCounter = 0;
 
-    ArrayList enemyList = new ArrayList();
+    private float hydraSpawnSpeed = 5.0f;
+    private int hydraCounter = 0;
 
     // Start is called before the first frame update
     void Start()
     {
         // InvokeRepeating("SpawnEnemy", 0f, 2.0f);
-        StartCoroutine(SpawnEnemy(spawnSpeed));
+        StartCoroutine(SpawnZerg(zergSpawnSpeed));
 
     }
 
@@ -30,11 +33,11 @@ public class SpawnManager : MonoBehaviour
     void Update()
     {
         // if ((float)Time.deltaTime % 5.0f == 1){
-        //     spawnSpeed -= 0.2f;
+        //     zergSpawnSpeed -= 0.2f;
         // }
     }
 
-    IEnumerator SpawnEnemy(float time){
+    IEnumerator SpawnZerg(float time){
         yield return new WaitForSeconds(time);
 
         while (true){
@@ -65,18 +68,68 @@ public class SpawnManager : MonoBehaviour
             }
 
             spawnPosition = new Vector3(randomXposition, randomYposition, 0f);
-            newEnemy = Instantiate(enemy, spawnPosition, Quaternion.identity);
+            newEnemy = Instantiate(zergling, spawnPosition, Quaternion.identity);
             
             //add enemy to the list
-            enemyList.Add(enemy);
-            spawnCounter += 1;
+            // enemyList.Add(enemy);
+            zergCounter += 1;
 
-            if (spawnCounter % 5 == 1){
-                spawnSpeed -= 0.1f;
+            if (zergCounter % 8 == 1){
+                zergSpawnSpeed -= 0.1f;
+                // Debug.Log(zergSpawnSpeed);
+            }
+
+            if (zergCounter == 10){
+                StartCoroutine(SpawnHydra(hydraSpawnSpeed));
+            }
+            
+            yield return new WaitForSeconds(zergSpawnSpeed);
+        }
+    }
+
+    IEnumerator SpawnHydra(float time){
+        yield return new WaitForSeconds(time);
+
+        while (true){
+            randomSpawnZone = Random.Range(0, 4);
+
+            //spawning in random ranges
+            switch (randomSpawnZone){ 
+                case 0:
+                randomXposition = Random.Range(-11.0f, -10f);
+                randomYposition = Random.Range(-8.0f, -8.0f);
+                break;
+
+                case 1:
+                randomXposition = Random.Range(-10.0f, 10f);
+                randomYposition = Random.Range(-7.0f, -8.0f);
+                break;
+
+                case 2:
+                randomXposition = Random.Range(10.0f, 11f);
+                randomYposition = Random.Range(-8.0f, 8.0f);
+                break;
+
+                case 3:
+                randomXposition = Random.Range(-10.0f, 10f);
+                randomYposition = Random.Range(7.0f, 8.0f);
+                break;
+
+            }
+
+            spawnPosition = new Vector3(randomXposition, randomYposition, 0f);
+            newEnemy = Instantiate(hydralisk, spawnPosition, Quaternion.identity);
+            
+            //add enemy to the list
+            // enemyList.Add(enemy);
+            hydraCounter += 1;
+
+            if (hydraCounter % 5 == 1){
+                hydraSpawnSpeed -= 0.2f;
                 // Debug.Log(spawnSpeed);
             }
             
-            yield return new WaitForSeconds(spawnSpeed);
+            yield return new WaitForSeconds(hydraSpawnSpeed);
         }
     }
 
@@ -86,7 +139,9 @@ public class SpawnManager : MonoBehaviour
     }
 
     public void newGame(){
-        spawnSpeed = 2.0f;
-        spawnCounter = 0;
+        zergSpawnSpeed = 2.0f;
+        zergCounter = 0;
+        hydraSpawnSpeed = 5.0f;
+        hydraCounter = 0;
     }
 }
