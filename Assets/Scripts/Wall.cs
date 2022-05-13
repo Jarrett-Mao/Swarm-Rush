@@ -13,6 +13,7 @@ public class Wall : MonoBehaviour
     private int zerglingTouching = 0;
     private int hydraTouching = 0;
     private int infestorTouching = 0;
+    private int infestedTouching = 0;
 
     // private bool takeDamage = false;
 
@@ -65,6 +66,9 @@ public class Wall : MonoBehaviour
             case "Infestor":
                 infestorTouching += 1;
                 break;
+            case "Infested":
+                infestedTouching += 1;
+                break;
         }
     }
 
@@ -86,11 +90,14 @@ public class Wall : MonoBehaviour
             case "Infestor":
                 infestorTouching -= 1;
                 break;
+            case "Infested":
+                infestedTouching -= 1;
+                break;
         }
     }
 
     IEnumerator loseHealth(){
-        float damageValue = (0.25f * zerglingTouching) + (0.5f * hydraTouching) + (0.75f * infestorTouching);
+        float damageValue = (0.25f * zerglingTouching) + (0.5f * hydraTouching) + (0.75f * infestorTouching) + (0.10f * infestedTouching);
 
         health -= damageValue;
         

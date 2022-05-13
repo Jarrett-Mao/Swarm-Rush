@@ -9,6 +9,7 @@ TagManager:
   - Zergling
   - Hydralisk
   - Infestor
+  - Infested
   layers:
   - Default
   - TransparentFX

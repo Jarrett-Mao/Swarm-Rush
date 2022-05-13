@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class Enemy : MonoBehaviour
+public class InfestorEnemy : MonoBehaviour
 {
     //health bar variables
     public float maxHealth;
@@ -11,6 +11,9 @@ public class Enemy : MonoBehaviour
     public int pointValue;
     public Slider slider;
     public GameObject healthBarUI;
+    
+    [SerializeField]
+    private InfestorSpawning infestorSpawning;
 
     public float speed;
     public GameObject gameObject;
@@ -62,6 +65,7 @@ public class Enemy : MonoBehaviour
         
         health -= 1;
         if (health <= 0){
+            infestorSpawning.SpawnInfested();
             destroySelf();
             scoreManager.updateScore(pointValue);
         }

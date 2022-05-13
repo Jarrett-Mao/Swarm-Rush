@@ -1548,7 +1548,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   zergling: {fileID: 7456021483331725353, guid: eeac9596b56bbf840be813d627777471, type: 3}
   hydralisk: {fileID: 1433869322676645455, guid: 0501dbb1e28e4a34daaa12d2f0b2f7bc, type: 3}
-  infestor: {fileID: 5528956798743216252, guid: 6fa72be0930de0f4b9c505e3bc46fd16, type: 3}
+  infestor: {fileID: 3805968286691722865, guid: 6fa72be0930de0f4b9c505e3bc46fd16, type: 3}
 --- !u!4 &495809116
 Transform:
   m_ObjectHideFlags: 0
