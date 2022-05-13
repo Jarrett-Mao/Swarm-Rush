@@ -27,7 +27,8 @@ public class Tesseract : MonoBehaviour
         
         // Debug.Log("testing");
 
-        if (collider.gameObject.tag == "Zergling"){
+        if (collider.gameObject.tag == "Zergling" || collider.gameObject.tag == "Hydralisk" ||
+        collider.gameObject.tag == "Infestor" || collider.gameObject.tag == "Infested" ){
             //updates high score
             scoreManager.updateHighScore(); 
 
@@ -35,6 +36,9 @@ public class Tesseract : MonoBehaviour
             spawnManager.stopSpawning();
             foreach (Enemy enemy in GameObject.FindObjectsOfType<Enemy>()){
                 GameObject.Destroy(enemy.gameObject);
+            }
+            foreach (InfestorEnemy iEnemy in GameObject.FindObjectsOfType<InfestorEnemy>()){
+                GameObject.Destroy(iEnemy.gameObject);
             }
             GameObject.Destroy(gameObject);
 
