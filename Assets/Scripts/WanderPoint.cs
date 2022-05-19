@@ -8,12 +8,19 @@ public class WanderPoint : MonoBehaviour
 
     [SerializeField]
     private GameObject vehicle;
-    public Transform target;
+    private Transform target;
+    private Transform avoidTarget;
     // private Rigidbody2D rb;
     private Vector2 movement;
     private Vector3 targetLocation;
 
     private float theta;
+
+    private bool moveToTarget = true;
+    private bool goRight;
+
+    Vector3 right = new Vector3(0.2f, 0f, 0f);
+    Vector3 left = new Vector3(0.2f, 0f, 0f);
 
     // public Body body;
 
@@ -25,28 +32,71 @@ public class WanderPoint : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        // target = GameObject.FindWithTag("Tesseract").transform;
+        target = GameObject.FindWithTag("Tesseract").transform;
         targetLocation = target.position;
     }
 
     void FixedUpdate(){
         //calculates where the tesseract is and rotates towards it
         var direction = target.position - transform.position;
-        var angle = Mathf.Atan2(direction.y, (direction.x)) * Mathf.Rad2Deg;
-        transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
+        // var angle = Mathf.Atan2(direction.y, (direction.x)) * Mathf.Rad2Deg;
+        // transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
 
 
         direction.Normalize();
         // movement = direction;
-
-        moveCharacter(targetLocation);
+        if (moveToTarget == true){
+            moveCharacter(targetLocation);    
+        }
+        else {
+            avoid(avoidTarget);
+        }
+        
     }
 
     //moves the character forward based off the direction calculated in update()
     private void moveCharacter(Vector3 target){
         // rb.MovePosition((Vector2)transform.position + (direction * speed * Time.deltaTime));
         transform.position += (target - transform.position).normalized * speed * Time.deltaTime;
-        Debug.Log((target - transform.position).normalized * speed * Time.deltaTime);
+        // Debug.Log((target - transform.position).normalized * speed * Time.deltaTime);
+    }
+
+    private void avoid(Transform enemy){
+        
+
+        Vector3 enemyPosition = enemy.position;
+        if (goRight = true){
+            this.transform.position += ((right).normalized * speed * Time.deltaTime);
+        }
+        else {
+            this.transform.position += ((left).normalized * speed * Time.deltaTime);
+        }
+        
+        // this.transform.position += ((enemyPosition - transform.position).normalized * speed * Time.deltaTime);
+        Debug.Log("avoiding!");
+        Debug.Log(moveToTarget);
+    }
+
+    private void OnTriggerEnter2D(Collider2D enemy){
+        if (enemy.gameObject.tag == "Zergling" || enemy.gameObject.tag == "Hydralisk" ||
+        enemy.gameObject.tag == "Infestor" || enemy.gameObject.tag == "Infested"){
+            moveToTarget = false;
+            avoidTarget = enemy.gameObject.transform;
+            if (Random.Range(0, 1) == 0){
+                goRight = false;
+            }
+            else {
+                goRight = true;
+            }
+        }
+        
+    }
+
+    private void OnTriggerExit2D(Collider2D enemy){
+        if (enemy.gameObject.tag == "Zergling" || enemy.gameObject.tag == "Hydralisk" ||
+        enemy.gameObject.tag == "Infestor" || enemy.gameObject.tag == "Infested"){
+            moveToTarget = true;
+        }
     }
 
 

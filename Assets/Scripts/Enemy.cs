@@ -91,11 +91,15 @@ public class Enemy : MonoBehaviour
     }
 
     void OnCollisionEnter2D (Collision2D collision){
-        isTouching = true;
+        if (collision.gameObject.tag == "Wall"){
+            isTouching = true;
+        }
     }
 
     void OnCollisionExit2D (Collision2D collision){
-        isTouching = false;
+        if (collision.gameObject.tag == "Wall"){
+            isTouching = false;
+        }
     }
 
 
