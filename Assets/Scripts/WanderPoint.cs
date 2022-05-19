@@ -46,7 +46,11 @@ public class WanderPoint : MonoBehaviour
     private void moveCharacter(Vector3 target){
         // rb.MovePosition((Vector2)transform.position + (direction * speed * Time.deltaTime));
         transform.position += (target - transform.position).normalized * speed * Time.deltaTime;
+<<<<<<< HEAD:Assets/Scripts/WanderPoint.cs
         Debug.Log((target - transform.position).normalized * speed * Time.deltaTime);
+=======
+        
+>>>>>>> parent of a9f85da (fixed bug with enemy not stopping when hitting wall):Assets/Scripts/Vehicle.cs
     }
 
 
