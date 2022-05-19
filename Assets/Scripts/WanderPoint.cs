@@ -2,16 +2,18 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Vehicle : MonoBehaviour
+public class WanderPoint : MonoBehaviour
 {
     public float speed;
 
     [SerializeField]
     private GameObject vehicle;
-    private Transform target;
+    public Transform target;
     // private Rigidbody2D rb;
     private Vector2 movement;
     private Vector3 targetLocation;
+
+    private float theta;
 
     // public Body body;
 
@@ -23,8 +25,7 @@ public class Vehicle : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        // rb = this.GetComponent<Rigidbody2D>();
-        target = GameObject.FindWithTag("Tesseract").transform;
+        // target = GameObject.FindWithTag("Tesseract").transform;
         targetLocation = target.position;
     }
 
@@ -35,7 +36,7 @@ public class Vehicle : MonoBehaviour
         transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
 
 
-        // direction.Normalize();
+        direction.Normalize();
         // movement = direction;
 
         moveCharacter(targetLocation);
@@ -45,6 +46,7 @@ public class Vehicle : MonoBehaviour
     private void moveCharacter(Vector3 target){
         // rb.MovePosition((Vector2)transform.position + (direction * speed * Time.deltaTime));
         transform.position += (target - transform.position).normalized * speed * Time.deltaTime;
+        Debug.Log((target - transform.position).normalized * speed * Time.deltaTime);
     }
 
 
