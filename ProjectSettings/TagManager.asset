@@ -3,13 +3,7 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags:
-  - Tesseract
-  - ScoreManager
-  - Zergling
-  - Hydralisk
-  - Infestor
-  - Infested
+  tags: []
   layers:
   - Default
   - TransparentFX
@@ -44,9 +38,12 @@ TagManager:
   - 
   - 
   m_SortingLayers:
-  - name: Default
-    uniqueID: 0
+  - name: Background
+    uniqueID: 1753819199
     locked: 0
   - name: UI
-    uniqueID: 505773061
+    uniqueID: 1180510467
+    locked: 0
+  - name: Default
+    uniqueID: 0
     locked: 0

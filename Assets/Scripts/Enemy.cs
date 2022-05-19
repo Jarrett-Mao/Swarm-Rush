@@ -9,14 +9,16 @@ public class Enemy : MonoBehaviour
     public float maxHealth;
     public float health;
     public int pointValue;
+    public int speed;
     public Slider slider;
     public GameObject healthBarUI;
 
-    public float speed;
+    // public float speed;
     public GameObject gameObject;
     public ScoreManager scoreManager;
 
-    public Transform tesseract;
+    [SerializeField]
+    private Transform target;
     private Rigidbody2D rb;
     private Vector2 movement;
 
@@ -24,10 +26,10 @@ public class Enemy : MonoBehaviour
     void Start()
     {
         
-        // Vector3 direction = tesseract.position - transform.position;
-        // Debug.Log(tesseract.position);
+        // Vector3 direction = target.position - transform.position;
+        // Debug.Log(target.position);
         rb = this.GetComponent<Rigidbody2D>();
-        tesseract = GameObject.FindWithTag("Tesseract").transform;
+        // target = GameObject.FindWithTag("target").transform;
         scoreManager = GameObject.FindObjectOfType<ScoreManager>();
 
         health = maxHealth;
@@ -38,18 +40,22 @@ public class Enemy : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        var direction = tesseract.position - transform.position;
+        
+        var direction = target.position - transform.position;
         var angle = Mathf.Atan2(direction.y, (direction.x)) * Mathf.Rad2Deg;
         transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
 
         direction.Normalize();
         movement = direction;
 
-        slider.value = calculateHealth(); //health bar status
+        //calculates current health and activates slider if necessary
+        slider.value = calculateHealth(); 
         if(health < maxHealth){
             healthBarUI.SetActive(true); 
         } 
     }
+
+    //moves the character forward based off the direction calculated in update()
     private void FixedUpdate() {
         moveCharacter(movement);
     }
