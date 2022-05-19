@@ -42,13 +42,16 @@ public class Enemy : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
-        var direction = target.position - transform.position;
-        var angle = Mathf.Atan2(direction.y, (direction.x)) * Mathf.Rad2Deg;
-        transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
+        if (isTouching == false){
+            var direction = target.position - transform.position;
+            var angle = Mathf.Atan2(direction.y, (direction.x)) * Mathf.Rad2Deg;
+            transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
 
-        direction.Normalize();
-        movement = direction;
+            direction.Normalize();
+            movement = direction;
+
+            moveCharacter(movement);
+        }
 
         //calculates current health and activates slider if necessary
         slider.value = calculateHealth(); 
@@ -58,12 +61,12 @@ public class Enemy : MonoBehaviour
     }
 
     //moves the character forward based off the direction calculated in update()
-    private void FixedUpdate() {
-        if (isTouching == false){
-            moveCharacter(movement);
-        }
+    // private void FixedUpdate() {
+    //     if (isTouching == false){
+    //         moveCharacter(movement);
+    //     }
         
-    }
+    // }
 
     void moveCharacter(Vector2 direction){
         rb.MovePosition((Vector2)transform.position + (direction * speed * Time.deltaTime));

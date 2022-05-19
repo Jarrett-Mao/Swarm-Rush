@@ -45,7 +45,6 @@ public class Vehicle : MonoBehaviour
     private void moveCharacter(Vector3 target){
         // rb.MovePosition((Vector2)transform.position + (direction * speed * Time.deltaTime));
         transform.position += (target - transform.position).normalized * speed * Time.deltaTime;
-        
     }
 
 
