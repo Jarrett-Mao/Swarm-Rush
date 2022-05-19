@@ -12,6 +12,8 @@ public class Enemy : MonoBehaviour
     public int speed;
     public Slider slider;
     public GameObject healthBarUI;
+    
+    public bool isTouching = false;
 
     // public float speed;
     public GameObject gameObject;
@@ -57,7 +59,10 @@ public class Enemy : MonoBehaviour
 
     //moves the character forward based off the direction calculated in update()
     private void FixedUpdate() {
-        moveCharacter(movement);
+        if (isTouching == false){
+            moveCharacter(movement);
+        }
+        
     }
 
     void moveCharacter(Vector2 direction){
@@ -80,6 +85,14 @@ public class Enemy : MonoBehaviour
 
     float calculateHealth(){
         return health / maxHealth;
+    }
+
+    void OnCollisionEnter2D (Collision2D collision){
+        isTouching = true;
+    }
+
+    void OnCollisionExit2D (Collision2D collision){
+        isTouching = false;
     }
 
 
