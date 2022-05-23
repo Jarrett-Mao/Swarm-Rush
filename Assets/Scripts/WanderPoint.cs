@@ -65,7 +65,7 @@ public class WanderPoint : MonoBehaviour
         
 
         Vector3 enemyPosition = enemy.position;
-        if (goRight = true){
+        if (goRight){
             this.transform.position += ((right).normalized * speed * Time.deltaTime);
         }
         else {

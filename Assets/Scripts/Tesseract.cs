@@ -9,18 +9,26 @@ public class Tesseract : MonoBehaviour
     
     public GameObject UIComponents;
 
+    public Material noPower;
+    public Material hasPower;
+
+    private int rechargeTime = 5;
+    private bool clickable = false;
+    // public SpriteRenderer sr;
+    // public Sprite newSprite;
+
     // ArrayList enemyList = new ArrayList();
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        StartCoroutine("powerUp");
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 
     private void OnTriggerEnter2D(Collider2D collider){
@@ -49,6 +57,23 @@ public class Tesseract : MonoBehaviour
             Time.timeScale = 0;
 
 
+        }
+        
+    }
+
+    IEnumerator powerUp(){
+        yield return new WaitForSeconds(rechargeTime);
+        this.GetComponent<SpriteRenderer>().material = hasPower;
+        clickable = true;
+        rechargeTime += 1;
+        Debug.Log(rechargeTime);
+    }
+
+    void OnMouseDown(){
+        if (clickable){
+            clickable = false;
+            this.GetComponent<SpriteRenderer>().material = noPower;
+            StartCoroutine("powerUp");
         }
         
     }
