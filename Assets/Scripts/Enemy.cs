@@ -99,7 +99,7 @@ public class Enemy : MonoBehaviour
         }
 
         if (collision.gameObject.tag == "KillWave"){
-            GameObject.Destroy(gameObject);
+            destroySelf();
         }
     }
 

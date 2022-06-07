@@ -70,24 +70,27 @@ public class Tesseract : MonoBehaviour
         this.GetComponent<SpriteRenderer>().material = hasPower;
         clickable = true;
         rechargeTime += 1;
-        Debug.Log(rechargeTime);
-        Debug.Log(clickable);
+        // Debug.Log(rechargeTime);
+        // Debug.Log(clickable);
     }
 
     void OnMouseDown(){
-        Debug.Log("outside");
+        // Debug.Log("outside");
         if (clickable == true){
             StartCoroutine("spawnWave");
-            Debug.Log("inside");
+            // Debug.Log("inside");
         }
-        
+        StartCoroutine("spawnWave");
+        // Debug.Log("Clicking");
     }
 
     IEnumerator spawnWave(){
         wave = Instantiate(killwave, gameObject.transform.position, Quaternion.identity);
         clickable = false;
-        yield return new WaitForSeconds(1.5f);
         this.GetComponent<SpriteRenderer>().material = noPower;
+        yield return new WaitForSeconds(1.0f);
         StartCoroutine("powerUp");
+    
+        // yield return null;
     }
 }

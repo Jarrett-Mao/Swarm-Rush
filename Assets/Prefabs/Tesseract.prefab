@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 2212215585475393641}
   - component: {fileID: 1524647994}
   - component: {fileID: 1524647995}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Tesseract
   m_TagString: Tesseract
   m_Icon: {fileID: 0}

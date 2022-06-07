@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 1632046555004525639}
   - component: {fileID: 7144542605609286804}
   - component: {fileID: 1388818899}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: KillWave
   m_TagString: KillWave
   m_Icon: {fileID: 0}

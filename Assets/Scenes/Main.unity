@@ -190,6 +190,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: LeftWall
       objectReference: {fileID: 0}
+    - target: {fileID: 6471358256264319469, guid: 97b6a558f7e150f4da86ccdf803d1ca1, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 97b6a558f7e150f4da86ccdf803d1ca1, type: 3}
 --- !u!4 &391109 stripped
@@ -208,7 +212,7 @@ GameObject:
   - component: {fileID: 10460658}
   - component: {fileID: 10460660}
   - component: {fileID: 10460659}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Fill
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -283,6 +287,10 @@ PrefabInstance:
     - target: {fileID: 8666322507552369392, guid: ac60158ae63fb9240a9005c444e6c4d2, type: 3}
       propertyPath: m_Name
       value: LeftWall
+      objectReference: {fileID: 0}
+    - target: {fileID: 8666322507552369392, guid: ac60158ae63fb9240a9005c444e6c4d2, type: 3}
+      propertyPath: m_Layer
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 8666322507552369393, guid: ac60158ae63fb9240a9005c444e6c4d2, type: 3}
       propertyPath: m_RootOrder
@@ -454,7 +462,7 @@ GameObject:
   - component: {fileID: 44370713}
   - component: {fileID: 44370715}
   - component: {fileID: 44370714}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Fill
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -561,6 +569,10 @@ PrefabInstance:
     - target: {fileID: 7808150391749687730, guid: 2230130af5d8b3243ad0c1f9688d24c3, type: 3}
       propertyPath: m_Name
       value: BottomWall
+      objectReference: {fileID: 0}
+    - target: {fileID: 7808150391749687730, guid: 2230130af5d8b3243ad0c1f9688d24c3, type: 3}
+      propertyPath: m_Layer
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 7808150391749687757, guid: 2230130af5d8b3243ad0c1f9688d24c3, type: 3}
       propertyPath: m_RootOrder
@@ -1036,7 +1048,7 @@ GameObject:
   - component: {fileID: 293856191}
   - component: {fileID: 293856193}
   - component: {fileID: 293856192}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Fill
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1111,7 +1123,7 @@ GameObject:
   m_Component:
   - component: {fileID: 335178873}
   - component: {fileID: 335178874}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Slider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1237,7 +1249,7 @@ GameObject:
   m_Component:
   - component: {fileID: 387646847}
   - component: {fileID: 387646848}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Slider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1329,7 +1341,7 @@ GameObject:
   - component: {fileID: 418427707}
   - component: {fileID: 418427709}
   - component: {fileID: 418427708}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Handle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1403,7 +1415,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 419156887}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Handle Slide Area
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1440,7 +1452,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 420186673}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: SliderUI
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1477,7 +1489,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 443579260}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Wall Maria
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1561,7 +1573,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 496723213}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Handle Slide Area
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1604,7 +1616,7 @@ GameObject:
   - component: {fileID: 532950394}
   - component: {fileID: 532950393}
   - component: {fileID: 532950395}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2167,6 +2179,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: RightWall
       objectReference: {fileID: 0}
+    - target: {fileID: 7808150391749687730, guid: 2230130af5d8b3243ad0c1f9688d24c3, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 7808150391749687757, guid: 2230130af5d8b3243ad0c1f9688d24c3, type: 3}
       propertyPath: m_RootOrder
       value: 3
@@ -2314,7 +2330,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 927163760}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Fill Area
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2504,7 +2520,7 @@ GameObject:
   - component: {fileID: 1012805075}
   - component: {fileID: 1012805074}
   - component: {fileID: 1012805073}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2669,7 +2685,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1035747777}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: SliderUI
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2857,6 +2873,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: TopWall
       objectReference: {fileID: 0}
+    - target: {fileID: 6471358256264319469, guid: 97b6a558f7e150f4da86ccdf803d1ca1, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 97b6a558f7e150f4da86ccdf803d1ca1, type: 3}
 --- !u!4 &1123185063 stripped
@@ -3008,7 +3028,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1276816017}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Fill Area
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3091,7 +3111,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1299389172}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: SliderUI
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3130,7 +3150,7 @@ GameObject:
   - component: {fileID: 1374599499}
   - component: {fileID: 1374599501}
   - component: {fileID: 1374599500}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Background
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3262,6 +3282,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: RightWall
       objectReference: {fileID: 0}
+    - target: {fileID: 6471358256264319469, guid: 97b6a558f7e150f4da86ccdf803d1ca1, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 97b6a558f7e150f4da86ccdf803d1ca1, type: 3}
 --- !u!4 &1394454539 stripped
@@ -3392,7 +3416,7 @@ GameObject:
   - component: {fileID: 1440440887}
   - component: {fileID: 1440440889}
   - component: {fileID: 1440440888}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Background
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3814,7 +3838,7 @@ GameObject:
   - component: {fileID: 1528371791}
   - component: {fileID: 1528371793}
   - component: {fileID: 1528371792}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Handle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3890,6 +3914,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: BottomWall
       objectReference: {fileID: 0}
+    - target: {fileID: 8666322507552369392, guid: ac60158ae63fb9240a9005c444e6c4d2, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 8666322507552369393, guid: ac60158ae63fb9240a9005c444e6c4d2, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -3952,7 +3980,7 @@ GameObject:
   - component: {fileID: 1653670290}
   - component: {fileID: 1653670292}
   - component: {fileID: 1653670291}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Background
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4177,7 +4205,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1722460325}
   - component: {fileID: 1722460326}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Slider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4274,7 +4302,7 @@ GameObject:
   - component: {fileID: 1738582859}
   - component: {fileID: 1738582861}
   - component: {fileID: 1738582860}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Handle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4348,7 +4376,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1739350638}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Handle Slide Area
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4386,6 +4414,10 @@ PrefabInstance:
     - target: {fileID: 7808150391749687730, guid: 2230130af5d8b3243ad0c1f9688d24c3, type: 3}
       propertyPath: m_Name
       value: LeftWall
+      objectReference: {fileID: 0}
+    - target: {fileID: 7808150391749687730, guid: 2230130af5d8b3243ad0c1f9688d24c3, type: 3}
+      propertyPath: m_Layer
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 7808150391749687757, guid: 2230130af5d8b3243ad0c1f9688d24c3, type: 3}
       propertyPath: m_RootOrder
@@ -4485,7 +4517,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1909042829}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Fill Area
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4528,6 +4560,10 @@ PrefabInstance:
     - target: {fileID: 8666322507552369392, guid: ac60158ae63fb9240a9005c444e6c4d2, type: 3}
       propertyPath: m_Name
       value: RightWall
+      objectReference: {fileID: 0}
+    - target: {fileID: 8666322507552369392, guid: ac60158ae63fb9240a9005c444e6c4d2, type: 3}
+      propertyPath: m_Layer
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 8666322507552369393, guid: ac60158ae63fb9240a9005c444e6c4d2, type: 3}
       propertyPath: m_RootOrder
@@ -4654,6 +4690,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: BottomWall
       objectReference: {fileID: 0}
+    - target: {fileID: 6471358256264319469, guid: 97b6a558f7e150f4da86ccdf803d1ca1, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 97b6a558f7e150f4da86ccdf803d1ca1, type: 3}
 --- !u!4 &2074154651 stripped
@@ -4676,7 +4716,7 @@ GameObject:
   - component: {fileID: 2079036182}
   - component: {fileID: 2079036183}
   - component: {fileID: 2079036184}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4844,6 +4884,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1847018952}
     m_Modifications:
+    - target: {fileID: 1524647994, guid: 4cba600ce6dc6c84f9ad5833921f49cc, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1524647995, guid: 4cba600ce6dc6c84f9ad5833921f49cc, type: 3}
       propertyPath: UIComponents
       value: 
@@ -4904,6 +4948,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Tesseract
       objectReference: {fileID: 0}
+    - target: {fileID: 2212215585475393642, guid: 4cba600ce6dc6c84f9ad5833921f49cc, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4cba600ce6dc6c84f9ad5833921f49cc, type: 3}
 --- !u!1001 &7808150390386428045
@@ -4916,6 +4964,10 @@ PrefabInstance:
     - target: {fileID: 7808150391749687730, guid: 2230130af5d8b3243ad0c1f9688d24c3, type: 3}
       propertyPath: m_Name
       value: TopWall
+      objectReference: {fileID: 0}
+    - target: {fileID: 7808150391749687730, guid: 2230130af5d8b3243ad0c1f9688d24c3, type: 3}
+      propertyPath: m_Layer
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 7808150391749687757, guid: 2230130af5d8b3243ad0c1f9688d24c3, type: 3}
       propertyPath: m_RootOrder
@@ -4973,6 +5025,10 @@ PrefabInstance:
     - target: {fileID: 8666322507552369392, guid: ac60158ae63fb9240a9005c444e6c4d2, type: 3}
       propertyPath: m_Name
       value: TopWall
+      objectReference: {fileID: 0}
+    - target: {fileID: 8666322507552369392, guid: ac60158ae63fb9240a9005c444e6c4d2, type: 3}
+      propertyPath: m_Layer
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 8666322507552369393, guid: ac60158ae63fb9240a9005c444e6c4d2, type: 3}
       propertyPath: m_RootOrder

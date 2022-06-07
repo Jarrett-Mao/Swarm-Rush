@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 4241874574462860692}
   - component: {fileID: 2288204667455015903}
   - component: {fileID: -3281451172536818423}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: WallSina
   m_TagString: Untagged
   m_Icon: {fileID: 0}
