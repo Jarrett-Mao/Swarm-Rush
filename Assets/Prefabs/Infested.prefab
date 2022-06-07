@@ -586,7 +586,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 0
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
@@ -605,13 +605,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHealth: 2
+  health: 0
   pointValue: 5
+  speed: 2
   slider: {fileID: 5948801791819411360}
   healthBarUI: {fileID: 8141171241221512778}
-  speed: 2
+  isTouching: 0
   gameObject: {fileID: 8684582003104183890}
   scoreManager: {fileID: 0}
-  tesseract: {fileID: 0}
+  target: {fileID: 0}
 --- !u!1 &8949857703604945547
 GameObject:
   m_ObjectHideFlags: 0

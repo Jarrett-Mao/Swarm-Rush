@@ -12,7 +12,7 @@ public class Tesseract : MonoBehaviour
     public Material noPower;
     public Material hasPower;
 
-    private float rechargeTime = 5.0f;
+    private float rechargeTime = 10.0f;
     private bool clickable;
 
     [SerializeField]
