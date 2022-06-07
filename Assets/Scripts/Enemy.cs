@@ -31,7 +31,10 @@ public class Enemy : MonoBehaviour
         // Vector3 direction = target.position - transform.position;
         // Debug.Log(target.position);
         rb = this.GetComponent<Rigidbody2D>();
+
         // target = GameObject.FindWithTag("target").transform;
+        target = GameObject.FindWithTag("Tesseract").transform;
+        
         scoreManager = GameObject.FindObjectOfType<ScoreManager>();
 
         health = maxHealth;
@@ -77,12 +80,12 @@ public class Enemy : MonoBehaviour
         health -= 1;
         if (health <= 0){
             destroySelf();
-            scoreManager.updateScore(pointValue);
         }
 
     }
 
     public void destroySelf(){
+        scoreManager.updateScore(pointValue);
         GameObject.Destroy(gameObject);
     }
 
@@ -94,6 +97,10 @@ public class Enemy : MonoBehaviour
         if (collision.gameObject.tag == "Wall"){
             isTouching = true;
         }
+
+        if (collision.gameObject.tag == "KillWave"){
+            GameObject.Destroy(gameObject);
+        }
     }
 
     void OnCollisionExit2D (Collision2D collision){
@@ -101,6 +108,4 @@ public class Enemy : MonoBehaviour
             isTouching = false;
         }
     }
-
-
 }

@@ -14,6 +14,10 @@ public class Tesseract : MonoBehaviour
 
     private int rechargeTime = 5;
     private bool clickable = false;
+
+    [SerializeField]
+    private GameObject killwave;
+    private GameObject wave;
     // public SpriteRenderer sr;
     // public Sprite newSprite;
 
@@ -67,16 +71,23 @@ public class Tesseract : MonoBehaviour
         clickable = true;
         rechargeTime += 1;
         Debug.Log(rechargeTime);
+        Debug.Log(clickable);
     }
 
     void OnMouseDown(){
-        if (clickable){
-            clickable = false;
-            this.GetComponent<SpriteRenderer>().material = noPower;
-            StartCoroutine("powerUp");
+        Debug.Log("outside");
+        if (clickable == true){
+            StartCoroutine("spawnWave");
+            Debug.Log("inside");
         }
         
     }
 
-    
+    IEnumerator spawnWave(){
+        wave = Instantiate(killwave, gameObject.transform.position, Quaternion.identity);
+        clickable = false;
+        yield return new WaitForSeconds(1.5f);
+        this.GetComponent<SpriteRenderer>().material = noPower;
+        StartCoroutine("powerUp");
+    }
 }

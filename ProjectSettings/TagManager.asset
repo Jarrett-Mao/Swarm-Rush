@@ -3,7 +3,13 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Zergling
+  - Hydralisk
+  - Infestor
+  - Infested
+  - Tesseract
+  - KillWave
   layers:
   - Default
   - TransparentFX
@@ -46,4 +52,7 @@ TagManager:
     locked: 0
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Tesseract
+    uniqueID: 509089981
     locked: 0
