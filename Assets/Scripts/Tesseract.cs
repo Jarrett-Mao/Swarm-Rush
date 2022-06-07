@@ -12,12 +12,12 @@ public class Tesseract : MonoBehaviour
     public Material noPower;
     public Material hasPower;
 
-    private int rechargeTime = 5;
-    private bool clickable = false;
+    private float rechargeTime = 5.0f;
+    private bool clickable;
 
     [SerializeField]
-    private GameObject killwave;
-    private GameObject wave;
+    private GameObject energyNova;
+    private GameObject nova;
     // public SpriteRenderer sr;
     // public Sprite newSprite;
 
@@ -26,6 +26,7 @@ public class Tesseract : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        clickable = false;
         StartCoroutine("powerUp");
     }
 
@@ -68,29 +69,27 @@ public class Tesseract : MonoBehaviour
     IEnumerator powerUp(){
         yield return new WaitForSeconds(rechargeTime);
         this.GetComponent<SpriteRenderer>().material = hasPower;
-        clickable = true;
         rechargeTime += 1;
+        clickable = true;
         // Debug.Log(rechargeTime);
         // Debug.Log(clickable);
     }
 
     void OnMouseDown(){
-        // Debug.Log("outside");
         if (clickable == true){
-            StartCoroutine("spawnWave");
+            StartCoroutine("spawnNova");
             // Debug.Log("inside");
         }
-        StartCoroutine("spawnWave");
-        // Debug.Log("Clicking");
     }
 
-    IEnumerator spawnWave(){
-        wave = Instantiate(killwave, gameObject.transform.position, Quaternion.identity);
+    IEnumerator spawnNova(){
+        nova = Instantiate(energyNova, gameObject.transform.position, Quaternion.identity);
         clickable = false;
+        Debug.Log(clickable);
         this.GetComponent<SpriteRenderer>().material = noPower;
-        yield return new WaitForSeconds(1.0f);
+        yield return new WaitForSeconds(1.5f);
         StartCoroutine("powerUp");
     
-        // yield return null;
+        yield return null;
     }
 }

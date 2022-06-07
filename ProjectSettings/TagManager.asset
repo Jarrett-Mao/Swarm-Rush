@@ -9,6 +9,7 @@ TagManager:
   - Infestor
   - Infested
   - Tesseract
+  - EnergyNova
   - KillWave
   layers:
   - Default
@@ -17,7 +18,7 @@ TagManager:
   - Base
   - Water
   - UI
-  - KillWave
+  - EnergyNova
   - 
   - 
   - 
@@ -55,4 +56,7 @@ TagManager:
     locked: 0
   - name: Tesseract
     uniqueID: 509089981
+    locked: 0
+  - name: Mouse
+    uniqueID: 1147486601
     locked: 0

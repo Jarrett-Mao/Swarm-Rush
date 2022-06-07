@@ -98,7 +98,7 @@ public class Enemy : MonoBehaviour
             isTouching = true;
         }
 
-        if (collision.gameObject.tag == "KillWave"){
+        if (collision.gameObject.tag == "EnergyNova"){
             destroySelf();
         }
     }

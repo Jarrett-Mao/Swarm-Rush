@@ -14,8 +14,8 @@ GameObject:
   - component: {fileID: 7144542605609286804}
   - component: {fileID: 1388818899}
   m_Layer: 6
-  m_Name: KillWave
-  m_TagString: KillWave
+  m_Name: EnergyNova
+  m_TagString: EnergyNova
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
