@@ -11,6 +11,7 @@ public class Tesseract : MonoBehaviour
 
     public Material noPower;
     public Material hasPower;
+    public Material hasPowerTwo;
 
     private float rechargeTime = 10.0f;
     private bool clickable;
@@ -71,12 +72,22 @@ public class Tesseract : MonoBehaviour
         this.GetComponent<SpriteRenderer>().material = hasPower;
         rechargeTime += 1;
         clickable = true;
+        StartCoroutine("blinking");
         // Debug.Log(rechargeTime);
         // Debug.Log(clickable);
     }
 
+    IEnumerator blinking(){
+        this.GetComponent<SpriteRenderer>().material = hasPower;
+        yield return new WaitForSeconds(0.5f);
+        this.GetComponent<SpriteRenderer>().material = hasPowerTwo;
+        yield return new WaitForSeconds(0.5f);
+        StartCoroutine("blinking");
+    }
+
     void OnMouseDown(){
         if (clickable == true){
+            StopCoroutine("blinking");
             StartCoroutine("spawnNova");
             // Debug.Log("inside");
         }
@@ -85,7 +96,7 @@ public class Tesseract : MonoBehaviour
     IEnumerator spawnNova(){
         nova = Instantiate(energyNova, gameObject.transform.position, Quaternion.identity);
         clickable = false;
-        Debug.Log(clickable);
+        // Debug.Log(clickable);
         this.GetComponent<SpriteRenderer>().material = noPower;
         yield return new WaitForSeconds(1.5f);
         StartCoroutine("powerUp");
