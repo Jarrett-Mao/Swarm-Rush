@@ -97,7 +97,7 @@ public class Wall : MonoBehaviour
     }
 
     IEnumerator loseHealth(){
-        float damageValue = (0.25f * zerglingTouching) + (0.5f * hydraTouching) + (0.75f * infestorTouching) + (0.10f * infestedTouching);
+        float damageValue = (0.15f * zerglingTouching) + (0.4f * hydraTouching) + (0.65f * infestorTouching) + (0.05f * infestedTouching);
 
         health -= damageValue;
         

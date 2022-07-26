@@ -11,6 +11,8 @@ public class InfestorEnemy : MonoBehaviour
     public int pointValue;
     public Slider slider;
     public GameObject healthBarUI;
+
+    public bool isTouching = false;
     
     [SerializeField]
     private InfestorSpawning infestorSpawning;
@@ -19,7 +21,7 @@ public class InfestorEnemy : MonoBehaviour
     public GameObject gameObject;
     public ScoreManager scoreManager;
 
-    public Transform tesseract;
+    public Transform target;
     private Rigidbody2D rb;
     private Vector2 movement;
 
@@ -30,7 +32,7 @@ public class InfestorEnemy : MonoBehaviour
         // Vector3 direction = tesseract.position - transform.position;
         // Debug.Log(tesseract.position);
         rb = this.GetComponent<Rigidbody2D>();
-        tesseract = GameObject.FindWithTag("Tesseract").transform;
+        target = GameObject.FindWithTag("Tesseract").transform;
         scoreManager = GameObject.FindObjectOfType<ScoreManager>();
 
         health = maxHealth;
@@ -41,21 +43,25 @@ public class InfestorEnemy : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        var direction = tesseract.position - transform.position;
-        var angle = Mathf.Atan2(direction.y, (direction.x)) * Mathf.Rad2Deg;
-        transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
+        if (isTouching == false){
+            var direction = target.position - transform.position;
+            var angle = Mathf.Atan2(direction.y, (direction.x)) * Mathf.Rad2Deg;
+            transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
 
-        direction.Normalize();
-        movement = direction;
+            direction.Normalize();
+            movement = direction;
+
+            moveCharacter(movement);
+        }
 
         slider.value = calculateHealth(); //health bar status
         if(health < maxHealth){
             healthBarUI.SetActive(true); 
         } 
     }
-    private void FixedUpdate() {
-        moveCharacter(movement);
-    }
+    // private void FixedUpdate() {
+    //     moveCharacter(movement);
+    // }
 
     void moveCharacter(Vector2 direction){
         rb.MovePosition((Vector2)transform.position + (direction * speed * Time.deltaTime));
@@ -78,6 +84,22 @@ public class InfestorEnemy : MonoBehaviour
 
     float calculateHealth(){
         return health / maxHealth;
+    }
+
+    void OnCollisionEnter2D (Collision2D collision){
+        if (collision.gameObject.tag == "Wall"){
+            isTouching = true;
+        }
+
+        if (collision.gameObject.tag == "EnergyNova"){
+            destroySelf();
+        }
+    }
+
+    void OnCollisionExit2D (Collision2D collision){
+        if (collision.gameObject.tag == "Wall"){
+            isTouching = false;
+        }
     }
 
 

@@ -786,11 +786,12 @@ MonoBehaviour:
   pointValue: 20
   slider: {fileID: 4041585282073780088}
   healthBarUI: {fileID: 8409624353617345587}
+  isTouching: 0
   infestorSpawning: {fileID: 5382629054311587241}
-  speed: 0.5
+  speed: 2
   gameObject: {fileID: 3805968286691722865}
   scoreManager: {fileID: 0}
-  tesseract: {fileID: 0}
+  target: {fileID: 0}
 --- !u!1 &5224015382049630536
 GameObject:
   m_ObjectHideFlags: 0

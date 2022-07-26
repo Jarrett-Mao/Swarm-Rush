@@ -148,13 +148,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHealth: 5
+  health: 0
   pointValue: 15
+  speed: 4
   slider: {fileID: 5697582390689495015}
   healthBarUI: {fileID: 6886750871050167931}
-  speed: 1
+  isTouching: 0
   gameObject: {fileID: 1433869322676645455}
   scoreManager: {fileID: 0}
-  tesseract: {fileID: 0}
+  target: {fileID: 0}
 --- !u!1 &1654913581626724564
 GameObject:
   m_ObjectHideFlags: 0

@@ -604,10 +604,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d0bb1b6f0d029e240903eec50e13a0c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 2
+  maxHealth: 1
   health: 0
   pointValue: 5
-  speed: 2
+  speed: 8
   slider: {fileID: 5948801791819411360}
   healthBarUI: {fileID: 8141171241221512778}
   isTouching: 0

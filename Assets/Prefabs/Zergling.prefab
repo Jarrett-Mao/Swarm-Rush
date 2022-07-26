@@ -761,7 +761,7 @@ MonoBehaviour:
   maxHealth: 3
   health: 0
   pointValue: 10
-  speed: 1
+  speed: 6
   slider: {fileID: 2914344181779827461}
   healthBarUI: {fileID: 2914344182652938871}
   isTouching: 0
