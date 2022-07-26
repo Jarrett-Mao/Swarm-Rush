@@ -5,6 +5,8 @@ using UnityEngine.UI;
 
 public class Enemy : MonoBehaviour
 {
+    //test  
+
     //health bar variables
     public float maxHealth;
     public float health;
